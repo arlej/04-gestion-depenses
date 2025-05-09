@@ -74,3 +74,14 @@ input, select {
     font-weight: bold;
     color: #28a745;
 }
+.btn-delete{
+    margin:0 20px;
+}
+
+.list-item{
+    &-alimentation{background-color: lightgreen;}
+    &-logement{background-color: lightcyan;}
+    &-transport{background-color: lightpink;}
+    &-divertissement{background-color: lightyellow;}
+
+}
