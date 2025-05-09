@@ -15,17 +15,22 @@ function displayList() {
         const [description, amount, category, date] = item;
         const itemBox = document.createElement("p");
         itemBox.className = "list-item";
+
         itemBox.innerHTML = `${description}, ${amount} €, ${category}, ${date}`;
 
         // COLOR BY CATEGORY
         if (category === "alimentation") {
             itemBox.className = "list-item-alimentation";
+            itemBox.innerHTML = `🍔 | ${description}, ${amount} €, ${date}`;
         } else if (category === "transport") {
             itemBox.className = "list-item-transport";
+            itemBox.innerHTML = `🚗 | ${description}, ${amount} €, ${date}`;
         } else if (category === "logement") {
             itemBox.className = "list-item-logement";
+            itemBox.innerHTML = `🏠 | ${description}, ${amount} €, ${date}`;
         } else if (category === "divertissement") {
             itemBox.className = "list-item-divertissement";
+            itemBox.innerHTML = `🎉 | ${description}, ${amount} €, ${date}`;
         }
 
         // BTN DELETE
@@ -80,10 +85,10 @@ function generateTotal() {
         total += Number(amount);
         console.log(total);
         depTotal.innerHTML = `Total = ${total} € <br>
-        | Alimentation = ${totalAlimentation} € 
-        | Logement = ${totalLogement} € 
-        | Transport = ${totalTransport} € 
-        | Divertissement = ${totalDivertissement}`;
+        🍔 = ${totalAlimentation} € 
+        | 🏠 = ${totalLogement} € 
+        | 🚗 = ${totalTransport} € 
+        | 🎉 = ${totalDivertissement}`;
     });
 }
 
@@ -92,13 +97,20 @@ depBtn.addEventListener("click", function (e) {
     e.preventDefault();
     depList.innerHTML = "";
 
+    // TODO: add condition if inputs empty / function
+
     const depDescription = inputDescription.value;
     const depAmount = inputAmount.value;
     const depCategory = inputCategory.value;
     const depDate = inputDate.value;
     const depNewItem = [depDescription, depAmount, depCategory, depDate];
 
-    depListArray.push(depNewItem);
+    if (depAmount < 0) {
+        // TODO: find something to do here
+    } else {
+        depListArray.push(depNewItem);
+    }
+
     displayList();
     generateTotal();
 });
