@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice ...</title>
+    <title>Gestion dépenses</title>
     <link rel="stylesheet" href="styles/styles.min.css">
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
     
+    <h1>Gestion des dépenses</h1>
+    <div class="container">
+        <form class="form-expense">
+            <div class="form-content">
+                <label for="description">Description :</label>
+                <input type="text" class="description" placeholder="Description de la dépense" >
+            </div>
+            <div class="form-content">
+                <label for="amount">Montant:</label>
+                <input type="number" class="amount" placeholder="Montant de la dépense" min="0">
+            </div>
+            <div class="form-content">
+                <label for="category">Catégorie :</label>
+                <select name="" class="category">
+                    <option value="" selected disabled>- Choisissez la catégorie</option>
+                    <option value="alimentation">Alimentation</option>
+                    <option value="logement">Logement</option>
+                    <option value="transport">Transport</option>
+                    <option value="divertissement">Divertissement</option>
+                </select>
+            </div>
+            <button type="submit" class="add-btn">Ajouter</button>
+        </form>
+        <div class="list-depense">
+            <p>Aucune dépense enregistrée.</p>
+        </div>
+        <div class="total"></div>
 </body>
 </html>

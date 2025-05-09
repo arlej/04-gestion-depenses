@@ -1,0 +1,76 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-expense {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.add-btn {
+    background-color: rgb(220, 20, 60);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: rgb(253, 74, 76);;
+}
+
+/* Liste des dépenses */
+.list-depense {
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Total des dépenses */
+.total {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
